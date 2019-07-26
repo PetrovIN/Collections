@@ -17,6 +17,7 @@ public class CollectionServiceImpl implements CollectionService {
         }
         return words.toArray(new String[0]);
     }
+
     @Override
     public Map amountOfRepeats(String text) {
         Map<String, Long> map = new HashMap<>();
@@ -36,16 +37,16 @@ public class CollectionServiceImpl implements CollectionService {
     }
 
     @Override
-    public String[] sortByAlphabet(String text) {
+    public String sortByAlphabet(String text) {
         String[] words = splitText(text);
-        Arrays.sort(words, Comparator.comparing(String::intern));
-        return words;
+        Arrays.sort(words);
+        return Arrays.toString(words);
     }
 
     @Override
-    public String[] sortByLength(String text) {
+    public String sortByLength(String text) {
         String[] words = splitText(text);
         Arrays.sort(words, Comparator.comparing(String::length));
-        return words;
+        return Arrays.toString(words);
     }
 }

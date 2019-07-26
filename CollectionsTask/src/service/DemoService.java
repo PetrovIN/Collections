@@ -7,6 +7,7 @@ import java.util.Arrays;
 public class DemoService {
     public void start() {
         CollectionServiceImpl collectionService = new CollectionServiceImpl();
+        StreamTaskServiceImpl streamTaskService = new StreamTaskServiceImpl();
         String text = "Ровно 1000 знаков будет в этом абзаце. В действительности 1000 знаков - это в одном случае более" +
                 " чем достаточно, в другом - слишком мало, в третьем - даже слишком много. Согласитесь, заголовок длиной " +
                 "в 15 предложений выглядел бы странно. А рассказ с предысторией, интригой и развязкой в тысячу знаков уложить " +
@@ -28,10 +29,13 @@ public class DemoService {
 
         System.out.println();
         System.out.println("Sort by alphabet");
-        System.out.println(Arrays.toString(collectionService.sortByAlphabet(text)));
+        System.out.println(collectionService.sortByAlphabet(text));
 
         System.out.println();
         System.out.println("Sort by length");
-        System.out.println(Arrays.toString(collectionService.sortByLength(text)));
+        System.out.println(collectionService.sortByLength(text));
+
+        /*System.out.println();
+        System.out.println(streamTaskService.sortByAlphabet(text));*/
     }
 }
